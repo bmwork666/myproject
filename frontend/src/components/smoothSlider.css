@@ -1,0 +1,28 @@
+/* TRACK CONTAINER */
+.smooth-track {
+  display: flex;
+  width: max-content;
+}
+
+/* LIVE MODE (auto scroll by JS) */
+.smooth-wrapper.live {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* DEBUG MODE (manual scroll) */
+.smooth-wrapper.debug {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+}
+
+/* EACH SLIDE */
+.smooth-slide {
+  flex: 0 0 100vw;  /* Full screen width */
+  height: 100vh;    /* Full screen height */
+  width: 100vw;
+}
