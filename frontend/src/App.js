@@ -64,7 +64,7 @@ function App() {
     }
 
     loadData();
-    const interval = setInterval(loadData, 2000);
+    const interval = setInterval(loadData, 5000);
     return () => clearInterval(interval);
   }, []);
 
