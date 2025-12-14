@@ -1,0 +1,10 @@
+http://192.168.102.75:9202/RTDB/WebAPI/GetTags
+
+
+  Var.W502_Rev.FMCELL.FM60.ProdCount_Shift
+
+  
+  Var.W502_Rev.RMCELL.RM80.ProdCount_Shift
+  
+  Var.W502_Rev.RMCELL.RM80.Shift_count_Petrol
+  Var.W502_Rev.RMCELL.RM80.Shift_count_Diesel
