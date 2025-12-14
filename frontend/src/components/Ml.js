@@ -3,104 +3,120 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function Ml({ data }) {
   return (
-<div
-  className="card p-4"
-  style={{
-    width: "100%",
-    height: "100%",
-    borderRadius: "20px",
-    background: "#a4e2f3",
-    border: "4px solid #61bdf1",
-    display: "flex",
-    flexDirection: "column",
-  }}
->
-
-
+    <div
+      className="shadow-lg p-4"
+      style={{
+        width: "100%",
+        height: "100%",
+        borderRadius: "22px",
+        background: "linear-gradient(145deg, #d3f8ef, #a4e2f3)",
+        border: "6px solid",
+        borderImage: "linear-gradient(45deg, #0fd68a, #0a8f55) 1",
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
+      {/* HEADER */}
       <h2
-        className="text-center mb-4 p-2"
+        className="text-center mb-4 px-4 py-2"
         style={{
-          background: "#f4c542",   // yellow header (your original)
-          borderRadius: "10px",
-          fontSize: "2rem",
-          fontWeight: "600"
+          background: "linear-gradient(90deg, #0fd68a, #0abf6c)",
+          borderRadius: "14px",
+          fontSize: "clamp(1.8rem, 4vw, 3.2rem)",
+          fontWeight: 800,
+          color: "white",
+          boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
         }}
       >
         Main Line Dashboard
       </h2>
 
-      {/* SHIFT & COUNT */}
-      <div
-        className="row text-center mb-4"
-        style={{ fontSize: "2rem", fontWeight: "400" }}
-      >
-        <div className="col-6">
-          <strong>Shift:</strong>
+      {/* MAIN BLOCK */}
+      <div className="d-flex flex-column align-items-center justify-content-center" style={{ flex: 1 }}>
+
+        {/* SHIFT */}
+        <div className="d-flex align-items-center justify-content-center mb-5" style={{ gap: "3rem" }}>
+          <strong
+            style={{
+              fontSize: "clamp(1.8rem, 4vw, 3rem)",
+              minWidth: "220px",
+              textAlign: "right",
+            }}
+          >
+            Shift :
+          </strong>
+
           <div
-            className="badge bg-primary mt-3 p-3"
-            style={{ fontSize: "2.2rem" }}
+            style={{
+              background: "linear-gradient(90deg, #1e90ff, #1c6cd6)",
+              color: "white",
+              fontSize: "clamp(1.8rem, 4vw, 3rem)",
+              borderRadius: "18px",
+              padding: "clamp(15px, 2vw, 25px) clamp(30px, 4vw, 60px)",
+              minWidth: "clamp(180px, 25vw, 300px)",
+              display: "flex",
+              justifyContent: "center",
+            }}
           >
             {data.shift || "..."}
           </div>
         </div>
 
-        <div className="col-6">
-          <strong>Count:</strong>
+        {/* COUNT */}
+        <div className="d-flex align-items-center justify-content-center mb-5" style={{ gap: "3rem" }}>
+          <strong
+            style={{
+              fontSize: "clamp(1.8rem, 4vw, 3rem)",
+              minWidth: "220px",
+              textAlign: "right",
+            }}
+          >
+            Count :
+          </strong>
+
           <div
-            className="badge bg-success mt-3 p-3"
-            style={{ fontSize: "2.2rem" }}
+            style={{
+              background: "linear-gradient(90deg, #2ecc71, #27ae60)",
+              color: "white",
+              fontSize: "clamp(1.8rem, 4vw, 3rem)",
+              borderRadius: "18px",
+              padding: "clamp(15px, 2vw, 25px) clamp(30px, 4vw, 60px)",
+              minWidth: "clamp(180px, 25vw, 300px)",
+              display: "flex",
+              justifyContent: "center",
+            }}
           >
             {data.count ?? "0"}
           </div>
         </div>
+
+        {/* TYPE COUNTS */}
+        <div className="row w-100 mt-4">
+          {["PetrolAT", "PetrolMT", "DieselAT", "DieselMT"].map((key, i) => (
+            <div key={i} className="col-6 mb-4 text-center">
+              <strong style={{ fontSize: "clamp(1.5rem, 3vw, 2.5rem)" }}>
+                {key.replace(/([A-Z])/g, "-$1").toUpperCase()} :
+              </strong>
+
+              <div
+                className="mt-3"
+                style={{
+                  background: "linear-gradient(90deg, #6c757d, #495057)",
+                  color: "white",
+                  fontSize: "clamp(1.8rem, 4vw, 3rem)",
+                  borderRadius: "16px",
+                  padding: "clamp(15px, 2vw, 25px)",
+                  minWidth: "clamp(150px, 20vw, 260px)",
+                  margin: "auto",
+                }}
+              >
+                {data[key] ?? "0"}
+              </div>
+            </div>
+          ))}
+        </div>
+
       </div>
-
-      {/* TYPE COUNTS */}
-      <div
-        className="row text-center"
-        style={{ fontSize: "2rem", fontWeight: "500" }}
-      >
-        <div className="col-6 mb-4">
-          <strong>PETROL-AT:</strong>
-          <div
-            className="badge bg-secondary mt-3 p-3"
-            style={{ fontSize: "2.2rem" }}
-          >
-            {data.PetrolAT ?? "0"}
-          </div>
-        </div>
-
-        <div className="col-6 mb-4">
-          <strong>PETROL-MT:</strong>
-          <div
-            className="badge bg-secondary mt-3 p-3"
-            style={{ fontSize: "2.2rem" }}
-          >
-            {data.PetrolMT ?? "0"}
-          </div>
-        </div>
-
-        <div className="col-6 mb-4">
-          <strong>DIESEL-AT:</strong>
-          <div
-            className="badge bg-secondary mt-3 p-3"
-            style={{ fontSize: "2.2rem" }}
-          >
-            {data.DieselAT ?? "0"}
-          </div>
-        </div>
-
-        <div className="col-6 mb-4">
-          <strong>DIESEL-MT:</strong>
-          <div
-            className="badge bg-secondary mt-3 p-3"
-            style={{ fontSize: "2.2rem" }}
-          >
-            {data.DieselMT ?? "0"}
-          </div>
-        </div>
-      </div>
-
     </div>
   );
 }
