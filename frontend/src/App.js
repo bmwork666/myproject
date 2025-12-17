@@ -8,7 +8,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import ImageUpload  from "./components/ImageUpload";
 import HomePage from "./components/HomePage";
 import ImageSlider from "./components/ImageSlider";
-import login from "./components/Login"
+
 
 import {Routes,Route}from "react-router-dom"
 import Login from "./components/Login";
@@ -18,9 +18,9 @@ function App() {
  
   return (
     <Routes>
-      <Route path="/" element={<HomePage />} />
+      <Route path="/home" element={<HomePage />} />
       <Route path="/upload" element={<PrivateRoute><ImageUpload /></PrivateRoute>} />
-      <Route path="/login" element = {<Login/>} />
+      <Route path="/" element = {<Login/>} />
     </Routes>
     
   );

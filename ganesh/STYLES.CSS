@@ -1,0 +1,91 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    background-color: #f1f4f8;
+    color: #333;
+}
+
+/* Main Header */
+.main-header {
+    background: linear-gradient(135deg, #1b5e20, #4caf50);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    letter-spacing: 1px;
+}
+
+/* Section Wrapper */
+.dashboard {
+    margin: 30px auto;
+    width: 90%;
+}
+
+/* Section Title */
+.section-title {
+    background-color: #2e7d32;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px 8px 0 0;
+    font-size: 20px;
+}
+
+/* Content Box */
+.content {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Table Styling */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #2e7d32;
+}
+
+/* Table Header */
+.styled-table thead th {
+    background-color: #e8f5e9;
+    color: #1b5e20;
+    padding: 14px;
+    text-align: center;
+    font-weight: 600;
+    border-bottom: 2px solid #2e7d32;
+}
+
+/* Table Cells */
+.styled-table tbody td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Zebra Rows */
+.styled-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Hover Effect */
+.styled-table tbody tr:hover {
+    background-color: #c8e6c9;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    background-color: #263238;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    margin-top: 40px;
+}

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import logo from "../assets/logo.png";
+import bg from "../assets/bg_color2.jpg"
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -32,7 +34,7 @@ function Login() {
       <nav className="nav  p-1 d-flex align-items-center justify-content-between">
         {/* Logo Left */}
         <img
-          src="/logo.png"
+          src={logo}
           alt="logo"
           style={{
             width: "160px",
@@ -50,7 +52,7 @@ function Login() {
         className=" d-flex justify-content-center align-items-center vh-100 "
         style={{
           //backgroundImage: `url(${bg})`,
-          backgroundImage: "url('/bg_color2.jpg')",
+          backgroundImage: `url(${bg})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

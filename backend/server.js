@@ -94,6 +94,15 @@ app.delete("/api/delete-image/:filename", auth, (req, res) => {
 // -------------------------------
 //   START SERVER
 // -------------------------------
+
+// // Serve React build
+// app.use(express.static(path.join(__dirname, "../frontend/build")));
+
+// app.get("*", (req, res) => {
+//   res.sendFile(
+//     path.join(__dirname, "../frontend/build/index.html")
+//   );
+// });
 app.listen(4000, () => {
   console.log(`Backend running on http://localhost:${port}`);
 });
